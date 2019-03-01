@@ -27,7 +27,7 @@
 
 ### 绚烂时钟 ###
 
-![time](../images/time.png)
+![time](http://www.gaogege.live/uploads/20190301/9706d82646e1c7f7235a66b4e102a4a6.png)
 
 ### 七巧板 ###
 
