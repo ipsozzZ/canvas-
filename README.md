@@ -31,11 +31,11 @@
 
 ### 七巧板 ###
 
-![qiqiaoban](../images/qiqiaoban.png)
+![qiqiaoban](http://www.gaogege.live/uploads/20190301/75ca0c116f2d2905e77105d00ce66c00.png)
 
 ### 倒计时 ###
 
-![countdown](../images/countdown.png)
+![countdown](http://www.gaogege.live/uploads/20190301/5ab91cb782eefd012bbbe24a313edbd7.png)
 
 ## 结语
 
