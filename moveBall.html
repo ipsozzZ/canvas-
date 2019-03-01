@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>moveBall</title>
+</head>
+<body>
+	<canvas id="canvas" style="display: block;margin: 50px auto;">
+
+	</canvas>
+
+	<script>
+
+		var ball = { x: 512, y: 100, r: 20, g: 2, vx: -4, vy: 0, color: "#005588" }
+		window.onload = function(){
+			var canvas = document.getElementById("canvas");
+
+			canvas.width = 1024;
+			canvas.height = 768;
+
+			var context = canvas.getContext("2d");
+
+			setInterval( // 实现动画的函数
+				function(){
+					render(context);
+					update();
+				},
+				50
+			);
+
+		}
+
+		/**
+		 * x轴的坐标以vx的速度运动（增加），y轴的坐标以vy的速度增加，同时y轴方向还有重力加速度g，所以vy也在增加
+		 * 当小球到达底部时反弹
+		 */
+		function update(){
+			ball.x  += ball.vx 
+			ball.y  += ball.vy
+			ball.vy += ball.g
+
+			if(ball.y >= 768-ball.r){
+				ball.y = 768 - ball.r;
+				ball.vy = -ball.vy*0.5;
+			}
+		}
+
+		/**
+		 * 实现每一帧的绘图
+		 */
+		function render(cxt){
+			cxt.clearRect(0, 0, cxt.canvas.width, cxt.canvas.height); // 刷新矩阵
+
+			cxt.fillStyle = ball.color;
+			cxt.beginPath();
+			cxt.arc(ball.x, ball.y, ball.r, 0, 2*Math.PI);
+			cxt.closePath();
+
+			cxt.fill();
+		}
+
+	</script>
+</body>
+</html>
